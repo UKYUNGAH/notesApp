@@ -84,8 +84,6 @@ body {
     color: #afafaf;
     display: none;
 }
-.note_box ul {
-}
 .note_box ul::-webkit-scrollbar {
     display: none;
   }
