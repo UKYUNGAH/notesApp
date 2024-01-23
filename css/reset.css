@@ -12,7 +12,7 @@ label, input, button, select, img {vertical-align:middle; background: transparen
 input, button {margin:0;padding:0;}
 button,input[type=button],input[type=submit]{cursor:pointer;}
 input[type=text], input[type=password], input[type=submit], input[type=image], button {border-radius:0;-webkit-appearance:none ;box-sizing:border-box;}
-textarea {border-radius:0;-webkit-appearance:none}
+textarea {border-radius:0;-webkit-appearance:none;border: none; outline: none; resize: none;}
 p {margin:0;padding:0;word-break:break-all}
 pre {overflow-x:scroll;font-size:1.1em}
 a:link, a:visited {color:inherit;text-decoration:none}
