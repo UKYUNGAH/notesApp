@@ -4,6 +4,8 @@ let closeBtn = document.querySelector('.close')
 const writeForm = document.querySelector('.write_form');
 const list = document.querySelector('.memos')
 
+
+
 // ======================== popup ========================
 more.addEventListener('click', () => {
     modal.classList.add('show-modal');
@@ -37,12 +39,13 @@ const seveMemo = memoText => {
 
     list.innerHTML += html
 }
+
+
+
 writeForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    // const memo = writeForm.add.value;    
     const memo = writeForm.querySelector('[name="add"]').value;
-
     console.log(memo)
 
 
