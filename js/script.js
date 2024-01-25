@@ -1,5 +1,24 @@
+let more = document.querySelector('.m_btn');
+let modal = document.querySelector('.black-bg')
+let closeBtn = document.querySelector('.close')
 const addForm = document.querySelector('.add_form');
 const list = document.querySelector('.memos')
+
+
+more.addEventListener('click', () => {
+    modal.classList.add('show-modal');
+})
+
+modal.addEventListener('click', (e) => {
+   if(e.target === modal){
+       modal.classList.remove('show-modal');
+   }
+})
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show-modal');
+})
+
+
 
 const seveMemo = memoText => {
     const html = `<li>
@@ -16,9 +35,8 @@ const seveMemo = memoText => {
     </a>
 </li>`
 
-    list.innerHTML += html;
+    list.insertAdjacentHTML('beforeend', html)
 }
-
 addForm.addEventListener('submit', e => {
     e.preventDefault();
 
