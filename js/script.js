@@ -96,6 +96,7 @@ noteData = JSON.parse(noteData);
 
 writeForm.addEventListener('submit', () => {
    
+    
     const memo = writeForm.querySelector('[name="add"]').value;
     const memo2 = writeForm.querySelector('[name="add2"]').value;
 
