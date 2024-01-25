@@ -1,7 +1,7 @@
 let more = document.querySelector('.m_btn');
 let modal = document.querySelector('.black-bg')
 let closeBtn = document.querySelector('.close')
-const addForm = document.querySelector('.add_form');
+const writeForm = document.querySelector('.write_form');
 const list = document.querySelector('.memos')
 
 // ======================== popup ========================
@@ -35,13 +35,13 @@ const seveMemo = memoText => {
     </a>
 </li>`
 
-    list.insertAdjacentHTML('beforeend', html)
+    list.innerHTML += html
 }
-addForm.addEventListener('submit', e => {
+writeForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    // const memo = addForm.add.value;    
-    const memo = addForm.querySelector('[name="add"]').value;
+    // const memo = writeForm.add.value;    
+    const memo = writeForm.querySelector('[name="add"]').value;
 
     console.log(memo)
 
