@@ -1,24 +1,36 @@
-let more = document.querySelector('.m_btn');
-let modal = document.querySelector('.black-bg')
-let closeBtn = document.querySelector('.close')
+let more = document.querySelectorAll('.m_btn');
+let modal = document.querySelectorAll('.black-bg');
+let closeBtn = document.querySelectorAll('.close');
 const writeForm = document.querySelector('.write_form');
 const list = document.querySelector('.memos')
 
 
 
 // ======================== popup ========================
-more.addEventListener('click', () => {
-    modal.classList.add('show-modal');
-})
+for(let i = 0; i < more.length; i++){
+    more[i].addEventListener('click', () => {
+        for(let j = 0; j < modal.length; j++){
+            modal[j].classList.add('show-modal');
+        }
+    })
+}
 
-modal.addEventListener('click', (e) => {
-   if(e.target === modal){
-       modal.classList.remove('show-modal');
-   }
-})
-closeBtn.addEventListener('click', () => {
-    modal.classList.remove('show-modal');
-})
+for(let i = 0; i < modal.length; i++){
+    modal[i].addEventListener('click', (e) => {
+        if(e.target === modal[i]){
+            modal[i].classList.remove('show-modal');
+        }
+     })
+}
+
+for(let i = 0; i < closeBtn.length; i++){
+    closeBtn[i].addEventListener('click', () => {
+        for(let j = 0; j < modal.length; j++){
+            modal[j].classList.remove('show-modal');
+        }
+    })
+}
+
 
 
 // ======================== popup ========================
