@@ -4,7 +4,7 @@ let closeBtn = document.querySelector('.close')
 const addForm = document.querySelector('.add_form');
 const list = document.querySelector('.memos')
 
-
+// ======================== popup ========================
 more.addEventListener('click', () => {
     modal.classList.add('show-modal');
 })
@@ -19,7 +19,7 @@ closeBtn.addEventListener('click', () => {
 })
 
 
-
+// ======================== popup ========================
 const seveMemo = memoText => {
     const html = `<li>
     <a href="#">
