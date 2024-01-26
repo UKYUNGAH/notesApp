@@ -1,9 +1,15 @@
 let more = document.querySelectorAll('.m_btn');
 let modal = document.querySelectorAll('.black-bg');
+let deleteBtn = document.querySelectorAll('.delete-btn');
 let closeBtn = document.querySelectorAll('.close');
 const writeForm = document.querySelector('.write_form');
 const list = document.querySelector('.memos')
+const li = document.querySelector('.li')
+const liBtn = document.querySelector('.modal_btn')
 const uu = document.querySelector('.uu')
+let dMemo = document.querySelector('.detail_memo')
+let dTitle = document.querySelector('.detail_title')
+let dText = document.querySelector('.detail_text')
 
 
 
@@ -33,18 +39,17 @@ for(let i = 0; i < closeBtn.length; i++){
 }
 
 
-
 // ======================== write ========================
-
 //여기는 이름이 세이브메모 라기보단 그냥 게시판 리스트를 추가해주기위한 함수다 세이브랑 관계없다.
+
 const saveMemo = () => {
 
     for(let i = 0; i < noteData.length; i++){
-        const html = `<li>
+        const html = `<li class = "li">
         <a href="detail.html">
             <div class="top">
                 <h4>${noteData[i].title}</h4>
-                <button type="button">
+                <button type="button" class="modal_btn">
                     <img src="./img/more.png" alt="">
                 </button>
             </div>
@@ -57,9 +62,20 @@ const saveMemo = () => {
     list.innerHTML += html
 
     }
+}
 
-
-
+const dtailMemo = () => {
+    for(let j = 0; j < noteData.length; j++){
+        const plus = `
+        <h1 class="detail_title c_title">${noteData.title[j]}</h1>
+        <p class="detail_text c_text">${noteData.text[j]}</p>
+        <div class="btn_box ">
+            <button type="button" class="cbtn btn1" onclick="history.back()">취소</button>
+            <button type="button" class="cbtn btn2" onclick="location.href='#'">수정</button>
+        </div>`
+    }
+    
+    dMemo.innerHTML += plus;
 }
 
 
@@ -70,14 +86,14 @@ const saveMemo = () => {
 
 //윈도우가 로드 됐을때.
 window.onload = () => {
-    if( !noteData.length ){
+    if( noteData === null ){
         // 1. 로컬스토리지에 data 라는 이름으로, 제이슨언어로 된 빈 배열을 만든다.
         localStorage.setItem('data', JSON.stringify([]));
         uu.classList.add('block');
-        uu.classList.remove('none');
+        // uu.classList.remove('none');
     }else{
-        uu.classList.add('none');
         uu.classList.remove('block');
+        uu.classList.add('none');
     }
 
     //saveMemo를 윈도우 켜질때 사용한 이유는 ?
@@ -86,17 +102,26 @@ window.onload = () => {
     saveMemo();
     
 }
+
+
+
 // 그래서 (1)번에서 만들어준 빈배열인 data 를 로컬스토리지.겟아이템 으로 가져 온다음 변수에 담는다 이름은 상관없지만 지금은 noteData 이름으로 해놨다.
 // 2. 근데!!!! 사용하려고 보니!!!!! (1) 번에서 만든 빈배열은 무엇이다? 제이슨언어다!
 let noteData = localStorage.getItem('data');
+
+
+
 
 // 그래서 우리가 배열에 추가하는 함수인 푸쉬를 사용하기 위해서는 우리가 사용하는 스크립트언어로 바꿔줘야한다.
 // 이걸 우리가 사용하는 스크립트언어로 파싱(변환) 해주는 JSON.parse 라는 함수를 사용한다.
 noteData = JSON.parse(noteData);
 
+
+
+
 writeForm.addEventListener('submit', () => {
    
-    
+
     const memo = writeForm.querySelector('[name="add"]').value;
     const memo2 = writeForm.querySelector('[name="add2"]').value;
 
@@ -106,6 +131,7 @@ writeForm.addEventListener('submit', () => {
     // 내가 만약 경아라는 사람을 저장해야한다. 근데 이름,성별,지역
     // ex) const 경아 = { name: '경아', gender : 'female', ~~~~~~ } 이런 경우에 오브젝트를 쓴다
     // 그래서 우리는 제목,내용,시간 등등 많은 정보가 필요하기때문에 오브젝트를 사용했다.!!!!
+    
     const todo = {
         id:Date.now(),
         title: memo,
@@ -123,3 +149,9 @@ writeForm.addEventListener('submit', () => {
     // 그래서 다시 제이슨언어로 변환시켜서 저장해주었다.
     localStorage.setItem('data', JSON.stringify(noteData));
 })
+
+// 각 노트의 삭제 버튼 이벤트
+// deleteBtn.addEventListener('click', (e) => {
+
+//     console.log(e.target)
+// })
