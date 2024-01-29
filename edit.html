@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.jpeg" type="image/jpeg">
+    <title>Notes app 만들기</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <header class="title">
+                <button type="button" onclick="history.back()"><img src="./img/back.png" alt=""></button>
+                <h1>Notes app</h1>
+            </header>
+            <section id="write" class="c_write">
+                <form action="index.html" class="write_form">
+                    <div class="write_memo">
+                        <input type="text" placeholder="제목을 입력해주세요" name="add" class="c_title" required>
+                        <!-- <label for="name" ></label> -->
+                        <textarea name="add2" id="" placeholder="메모를 입력해주세요" class="c_text" required></textarea>
+                        <div class="btn_box ">
+                            <button type="button" class="cbtn btn1" onclick="history.back()">취소</button>
+                            <button type="submit" class="cbtn btn2">저장</button>
+                        </div>
+                    </div>
+                </form> 
+            </section>
+        </div>
+    </div>
+</body>
+<script src="./js/script.js"></script>
+
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/favicon.jpeg" type="image/jpeg">
     <title>Notes app 만들기</title>
 </head>
 <body>
@@ -28,17 +29,26 @@
             </section> -->
             <section class="c_write">
                 <div class="write_memo detail_memo">
-                    <h1 class="detail_title c_title"></h1>
+                    <!-- <h1 class="detail_title c_title"></h1>
                     <p class="detail_text c_text"></p>
                     <div class="btn_box ">
                         <button type="button" class="cbtn btn1" onclick="history.back()">취소</button>
                         <button type="button" class="cbtn btn2" onclick="location.href='#'">수정</button>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </div>
+        <div class="black-bg modal">
+            <div class="white-bg">
+                <h4>메모를 삭제하시겠습니까?</h4>
+                <div class="btn_box ">
+                    <button type="button" class="cbtn btn2 close" >취소</button>
+                    <button type="button" id="deletes" class="cbtn btn1  close">삭제</button>
+                </div>
+            </div>
+        </div> 
     </div>
 </body>
-<script src="./js/script.js"></script>
-
+    <script src="./js/detail.js"></script>
+    <script src="./js/popup.js"></script>
 </html>
