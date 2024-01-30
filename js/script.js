@@ -6,8 +6,6 @@ const uu = document.querySelector('.uu');
 const searchInput = document.querySelector('#searchId');
 
 
-let noteData = localStorage.getItem('data');
-noteData = JSON.parse(noteData);
 
 // ======================== write ========================
 const saveMemo = () => {
@@ -22,6 +20,9 @@ const saveMemo = () => {
             </div>
         </a>
     </li>`;
+    // liTitle.href = `detail.html?id=${noteData[i].id}`;
+    // liTitle.innerHTML = noteData[i].title            
+    // liText.innerHTML = noteData[i].title            
 
         list.innerHTML += html;
     }
@@ -29,42 +30,7 @@ const saveMemo = () => {
 
 
 
-// // // ====== 4 검색!!
-// searchInput.addEventListener('keyup', e => {
-//     // 검색하는 값 가져오기
-//     const searchText = searchInput.value.toLowerCase();
-//     console.log(searchText)
-
-//     filterMemo(searchText);
-// });
-
-// const filterMemo = memo => {
-//     const memos = list.querySelectorAll('.li');
-//     memos.forEach(a => {
-//         const textContent = a.textContent.toLowerCase();
-//         const memoLowerCase = memo.toLowerCase(); // 검색어를 소문자로 변환
-//         if (!textContent.includes(memoLowerCase)) { // 소문자로 변환한 검색어와 메모의 텍스트를 비교
-//             a.classList.add('filtered');
-//         } else {
-//             a.classList.remove('filtered');
-//         }
-//     });
-// };
-
-searchInput.addEventListener('keyup', () => {
-    const searchInputValue = searchInput.value;
-    const allLi = document.querySelectorAll('.li')
-    // console.log(allLi)
-    // console.log(searchInputValue)
-    //누른 키가 li안에 텍스트 하나라도있으면 보이고 없으면 안보이게
-    allLi.forEach((a, i) => {
-        const liText = a.includes(searchInputValue);
-        console.log(liText)
-    }) 
-
-})
-
-
+// ===================================== 검색 =====================================
 
 
 
@@ -98,4 +64,27 @@ writeForm.addEventListener('submit', () => {
 
     localStorage.setItem('data', JSON.stringify(noteData));
 });
+
+let noteData = localStorage.getItem('data');
+noteData = JSON.parse(noteData);
+searchInput.addEventListener('keyup', () => {
+    const searchInputValue = searchInput.value;
+    const allLi = document.querySelectorAll('.li');
+    //누른 키가 li안에 텍스트 하나라도있으면 보이고 없으면 안보이게
+    allLi.forEach((a, i) => {
+        const liText = a.textContent;
+
+        const result = liText.includes(searchInputValue);
+
+        console.log('liText :', liText);
+        console.log('result :', result);
+
+        if (result) {
+            a.classList.remove('filtered');
+        } else {
+            a.classList.add('filtered');
+        }
+    });
+});
+
 

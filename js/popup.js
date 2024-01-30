@@ -22,3 +22,4 @@ deleteBtn.addEventListener('click', () => {
     modal.classList.remove('show-modal')
     location.href = 'index.html'
 })
+
