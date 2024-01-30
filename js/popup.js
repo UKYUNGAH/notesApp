@@ -1,9 +1,24 @@
-let deleteOpen = document.getElementById('deleteOpen');
+let deleteOpen = document.querySelector('#deleteOpen');
 let modal = document.querySelector('.black-bg');
 let deleteBtn = document.querySelector('#deleteBtn');
 let closeBtn = document.querySelector('.close');
 
-console.log('deleteOpen:', deleteOpen);
-console.log('modal:', modal);
-console.log('deleteBtn:', deleteBtn);
-console.log('closeBtn:', closeBtn);
+
+deleteOpen.addEventListener('click', () => {
+    modal.classList.add('show-modal')
+})
+
+modal.addEventListener('click', (e) => {
+    if(e.target === modal){
+        modal.classList.remove('show-modal')
+    }
+})
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show-modal')
+})
+
+deleteBtn.addEventListener('click', () => {
+    modal.classList.remove('show-modal')
+    location.href = 'index.html'
+})

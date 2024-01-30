@@ -152,14 +152,11 @@ body {
 .note_box p{
     font-size: 14px;
 }
-.note_box img{}
 .add {
     position: fixed;
     bottom: 15px;
     right: 15px;
 }
-.add button {}
-.add button img {}
 
 /* ======================== add ======================== */
 
@@ -262,6 +259,6 @@ gap: 15px;
     width: 40%;
 }
 
-.modal .btn1{
-
+.filtered{
+    display: none;
 }

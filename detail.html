@@ -29,12 +29,12 @@
             </section> -->
             <section class="c_write">
                 <div class="write_memo detail_memo">
-                    <!-- <h1 class="detail_title c_title"></h1>
-                    <p class="detail_text c_text"></p>
+                    <input type="text" name="add" class="detail_title c_title"  required>
+                    <textarea name="add2" id="" class="detail_text c_text" required></textarea>
                     <div class="btn_box ">
-                        <button type="button" class="cbtn btn1" onclick="history.back()">취소</button>
-                        <button type="button" class="cbtn btn2" onclick="location.href='#'">수정</button>
-                    </div> -->
+                        <button type="button" id="deleteOpen" class="cbtn dbtn btn1">삭제</button>
+                        <button type="button" class="cbtn btn2" onclick="location.href='index.html'">수정</button>
+                    </div>
                 </div>
             </section>
         </div>
@@ -43,12 +43,12 @@
                 <h4>메모를 삭제하시겠습니까?</h4>
                 <div class="btn_box ">
                     <button type="button" class="cbtn btn2 close" >취소</button>
-                    <button type="button" id="deletes" class="cbtn btn1  close">삭제</button>
+                    <button type="button" id="deleteBtn" class="cbtn btn1  close">삭제</button>
                 </div>
             </div>
         </div> 
     </div>
 </body>
-    <script src="./js/detail.js"></script>
-    <script src="./js/popup.js"></script>
+    <script src="./js/detail.js" defer></script>
+    <script src="./js/popup.js" defer></script>
 </html>
