@@ -5,7 +5,8 @@ const searchInput = document.querySelector('#searchId');
 
 let noteData = JSON.parse(localStorage.getItem('data'));
 // noteData = JSON.parse(noteData);
-// ======================== write ========================
+
+
 const saveMemo = () => {
     for (let i = 0; i < noteData.length; i++) {
         const html = `<li class = "li">
