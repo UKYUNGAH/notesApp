@@ -1,51 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./img/favicon.jpeg" type="image/jpeg">
-    <title>Notes app 만들기</title>
-</head>
-<body>
-    <div class="container">
-        <div class="wrap">
-            <header class="title">
-                <h1>Notes app</h1>
-            </header>
-            <section class="search_box">
-                <form class="search">
-                    <img src="./img/search.png" alt="">
-                    <input type="text" name="search" id="searchId" placeholder="Search">
-                </form>
-            </section>
-            <section class="note_box">
-                <div class="inner">
-                    <div class="uu">메모가 없습니다.</div>
-                <ul class="memos">
-                    <!-- <li class = "li">
-                        <a href="" class="li_id">
-                            <div class="top">
-                                <h4 class="li_h4"></h4>
-                            </div>
-                            <div class="bottom">
-                                <p class="li_p"></p>
-                            </div>
-                        </a>
-                    </li> -->
-                </ul>
-                </div>
-            </section>
-        </div> 
-        <div class="add">
-            <button type="button" onclick="location.href='write.html'">
-                <img src="img/add.png" alt="">
-            </button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="shortcut icon" href="./img/favicon.jpeg" type="image/jpeg" />
+        <title>Notes app 만들기</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrap">
+                <header class="title">
+                    <h1>Notes app</h1>
+                </header>
+                <section class="search_box">
+                    <form class="search">
+                        <img src="./img/search.png" alt="" />
+                        <input type="text" name="search" id="searchId" placeholder="Search" />
+                    </form>
+                </section>
+                <section class="note_box">
+                    <div class="inner">
+                        <div class="uu">메모가 없습니다.</div>
+                        <ul class="memos"></ul>
+                    </div>
+                </section>
+            </div>
+            <div class="add">
+                <button type="button" onclick="location.href='write.html'">
+                    <img src="img/add.png" alt="" />
+                </button>
+            </div>
         </div>
-
-    </div>
-</body>
-<script src="./js/script.js"></script>
-<script src="./js/detail.js"></script>
-<!-- <script src="./js/popup.js"></script> -->
+    </body>
+    <script src="./js/script.js"></script>
+    <!-- <script src="./js/detail.js"></script> -->
+    <!-- <script src="./js/popup.js"></script> -->
 </html>

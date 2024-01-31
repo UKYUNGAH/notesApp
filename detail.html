@@ -1,43 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./img/favicon.jpeg" type="image/jpeg">
-    <title>Notes app 만들기</title>
-</head>
-<body>
-    <div class="container">
-        <div class="wrap">
-            <header class="title">
-                <button type="button" onclick="history.back()"><img src="./img/back.png" alt=""></button>
-                <h1>Notes app</h1>
-            </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="shortcut icon" href="./img/favicon.jpeg" type="image/jpeg" />
+        <title>Notes app 만들기</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="wrap">
+                <header class="title">
+                    <button type="button" onclick="history.back()"><img src="./img/back.png" alt="" /></button>
+                    <h1>Notes app</h1>
+                </header>
 
-            <section class="c_write">
-                <div class="write_memo detail_memo">
-                    <input type="text" name="add" class="detail_title c_title"  required>
-                    <textarea name="add2" id="" class="detail_text c_text" required></textarea>
-                    <div class="btn_box ">
-                        <button type="button" id="deleteOpen" class="cbtn dbtn btn1">삭제</button>
-                        <button type="button" class="cbtn btn2" onclick="location.href='index.html'">수정</button>
+                <section class="c_write">
+                    <div class="write_memo detail_memo">
+                        <input type="text" name="add" class="detail_title c_title" required />
+                        <textarea name="add2" id="" class="detail_text c_text" required></textarea>
+                        <div class="btn_box">
+                            <button type="button" id="deleteOpen" class="cbtn dbtn btn1">삭제</button>
+                            <button type="button" id="editBtn" class="cbtn btn2" onclick="location.href='index.html'">수정</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="black-bg modal">
+                <div class="white-bg">
+                    <h4>메모를 삭제하시겠습니까?</h4>
+                    <div class="btn_box">
+                        <button type="button" class="cbtn btn2 close">취소</button>
+                        <button type="button" id="deleteBtn" class="cbtn btn1 close">삭제</button>
                     </div>
                 </div>
-            </section>
-        </div>
-        
-        <div class="black-bg modal">
-            <div class="white-bg">
-                <h4>메모를 삭제하시겠습니까?</h4>
-                <div class="btn_box ">
-                    <button type="button" class="cbtn btn2 close" >취소</button>
-                    <button type="button" id="deleteBtn" class="cbtn btn1  close">삭제</button>
-                </div>
             </div>
-        </div> 
-    </div>
-</body>
+        </div>
+    </body>
     <script src="./js/detail.js"></script>
     <script src="./js/popup.js"></script>
 </html>
